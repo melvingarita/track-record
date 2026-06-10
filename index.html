@@ -4,395 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cases — Melvin Garita</title>
-    <meta name="description" content="Four leadership cases with measurable outcomes — from turning around a struggling brokerage to building high-performance operations at a USD 17 billion institution.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Four leadership cases with measurable outcomes — from CEO of a broker-dealer to enterprise operations at a USD 17B institution.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --navy: #1B2A4A;
-            --navy-light: #243556;
             --gold: #C9A96E;
             --warm-gray: #F5F3F0;
             --white: #FFFFFF;
             --dark: #2D2D2D;
-            --medium: #6B7280;
-            --light-border: #E5E3E0;
+            --medium-gray: #6B7280;
+            --light-border: #E5E7EB;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--dark); line-height: 1.7; background: var(--white); }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 600; line-height: 1.3; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--dark);
-            background: var(--white);
-            line-height: 1.7;
-            font-size: 16px;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ── Navigation ── */
-        nav {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(255,255,255,0.97);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--light-border);
-            padding: 0 2rem;
-            height: 64px;
-            display: flex; align-items: center; justify-content: space-between;
-        }
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem; font-weight: 600;
-            color: var(--navy);
-            text-decoration: none;
-        }
-        .nav-links { display: flex; gap: 2rem; align-items: center; }
-        .nav-links a {
-            font-size: 0.85rem; font-weight: 400;
-            color: var(--medium); text-decoration: none;
-            letter-spacing: 0.02em;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover, .nav-links a.active { color: var(--navy); }
-        .nav-cta {
-            background: var(--navy) !important;
-            color: var(--white) !important;
-            padding: 0.5rem 1.2rem !important;
-            border-radius: 4px;
-            font-weight: 500 !important;
-        }
-        .nav-cta:hover { background: var(--navy-light) !important; }
-        .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+        /* NAV */
+        nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid var(--light-border); }
+        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--navy); text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.9rem; font-weight: 400; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-cta { background: var(--navy); color: var(--white) !important; padding: 0.5rem 1.25rem; border-radius: 4px; font-weight: 500; }
+        .nav-cta:hover { background: #2a3d63; }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
         .hamburger span { width: 24px; height: 2px; background: var(--navy); transition: 0.3s; }
 
-        /* ── Page Header ── */
-        .page-header {
-            padding: 10rem 2rem 4rem;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .page-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem; font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 1.5rem;
-        }
-        .page-header p {
-            font-size: 1.15rem;
-            color: var(--medium);
-            line-height: 1.8;
-        }
+        /* HERO */
+        .hero { padding: 10rem 2rem 5rem; text-align: center; background: var(--white); }
+        .hero h1 { font-size: 3rem; color: var(--navy); margin-bottom: 1.5rem; }
+        .hero p { font-size: 1.15rem; color: var(--medium-gray); max-width: 680px; margin: 0 auto; }
 
-        /* ── Case Container ── */
-        .cases-container {
-            max-width: 880px;
-            margin: 0 auto;
-            padding: 0 2rem 4rem;
-        }
+        /* SECTIONS */
+        .section { max-width: 900px; margin: 0 auto; padding: 5rem 2rem; }
+        .section-divider { border-top: 1px solid var(--light-border); }
 
-        /* ── Case Card ── */
-        .case-card {
-            margin-bottom: 5rem;
-            padding-bottom: 5rem;
-            border-bottom: 1px solid var(--light-border);
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s, transform 0.8s;
-        }
-        .case-card.visible { opacity: 1; transform: translateY(0); }
-        .case-card:last-of-type { border-bottom: none; }
+        /* CASE CARD */
+        .case-card { margin-bottom: 1rem; }
+        .case-header { margin-bottom: 2.5rem; }
+        .flagship-badge { display: inline-block; background: var(--gold); color: var(--white); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 3px; margin-bottom: 1rem; }
+        .case-meta { font-size: 0.95rem; color: var(--medium-gray); margin-bottom: 0.5rem; }
+        .case-title { font-size: 2rem; color: var(--navy); margin-bottom: 0.75rem; }
+        .case-subtitle { font-size: 1.05rem; color: var(--medium-gray); font-style: italic; }
 
-        .case-badge {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--white);
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 0.3rem 0.8rem;
-            border-radius: 3px;
-            margin-bottom: 1.2rem;
-        }
+        .case-section { margin-bottom: 2.5rem; }
+        .case-section h3 { font-size: 1.15rem; color: var(--gold); margin-bottom: 1rem; font-family: 'Inter', sans-serif; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; }
+        .case-section p { color: var(--dark); font-size: 1rem; line-height: 1.8; }
 
-        .case-meta {
-            font-size: 0.85rem;
-            color: var(--gold);
-            font-weight: 500;
-            letter-spacing: 0.03em;
-            margin-bottom: 0.8rem;
-        }
+        /* RESULTS TABLE */
+        .results-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .results-table td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--light-border); font-size: 0.95rem; }
+        .results-table td:first-child { font-weight: 500; color: var(--navy); width: 45%; }
+        .results-table td:last-child { color: var(--dark); }
 
-        .case-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 0.8rem;
-            line-height: 1.3;
-        }
+        /* TESTIMONIAL */
+        .testimonial { background: var(--warm-gray); border-left: 3px solid var(--gold); padding: 1.75rem 2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
+        .testimonial p { font-style: italic; color: var(--dark); font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.75rem; }
+        .testimonial .attribution { font-style: normal; font-weight: 600; color: var(--navy); font-size: 0.85rem; }
+        .testimonial-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gold); margin-bottom: 0.75rem; }
 
-        .case-subtitle {
-            font-size: 1.05rem;
-            color: var(--medium);
-            font-style: italic;
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
-        }
+        /* CLOSING */
+        .closing { text-align: center; padding: 5rem 2rem; background: var(--warm-gray); }
+        .closing p { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--navy); max-width: 600px; margin: 0 auto 2rem; line-height: 1.6; }
+        .closing-ctas { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+        .closing-ctas a { color: var(--navy); text-decoration: none; font-size: 0.95rem; font-weight: 500; border-bottom: 1px solid var(--gold); padding-bottom: 2px; transition: color 0.3s; }
+        .closing-ctas a:hover { color: var(--gold); }
 
-        .case-section {
-            margin-bottom: 2.2rem;
-        }
+        /* CTA SECTION */
+        .cta-section { background: var(--navy); padding: 4rem 2rem; text-align: center; }
+        .cta-section h2 { font-size: 2rem; color: var(--white); margin-bottom: 1rem; }
+        .cta-section p { color: rgba(255,255,255,0.7); max-width: 500px; margin: 0 auto 2rem; font-size: 1rem; }
+        .cta-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+        .cta-links a { color: var(--gold); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: opacity 0.3s; }
+        .cta-links a:hover { opacity: 0.8; }
 
-        .case-section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 0.8rem;
-            padding-bottom: 0.4rem;
-            border-bottom: 2px solid var(--gold);
-            display: inline-block;
-        }
+        /* FOOTER */
+        footer { background: var(--navy); color: rgba(255,255,255,0.5); text-align: center; padding: 2rem; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); }
 
-        .case-section p {
-            font-size: 0.95rem;
-            color: var(--dark);
-            line-height: 1.8;
-        }
+        /* ANIMATIONS */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        /* ── Results Table ── */
-        .results-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-        }
-        .results-table tr {
-            border-bottom: 1px solid var(--light-border);
-        }
-        .results-table tr:last-child { border-bottom: none; }
-        .results-table td {
-            padding: 0.8rem 0;
-            font-size: 0.95rem;
-            vertical-align: top;
-        }
-        .results-table td:first-child {
-            color: var(--medium);
-            font-weight: 400;
-            width: 45%;
-            padding-right: 1rem;
-        }
-        .results-table td:last-child {
-            color: var(--navy);
-            font-weight: 600;
-        }
-
-        /* ── Testimonial ── */
-        .testimonial {
-            background: var(--warm-gray);
-            border-left: 3px solid var(--gold);
-            padding: 1.8rem 2rem;
-            margin: 1.5rem 0;
-            border-radius: 0 6px 6px 0;
-        }
-        .testimonial p {
-            font-size: 0.95rem;
-            color: var(--dark);
-            line-height: 1.8;
-            font-style: italic;
-        }
-        .testimonial .attribution {
-            font-style: normal;
-            font-weight: 600;
-            color: var(--navy);
-            margin-top: 1rem;
-            font-size: 0.85rem;
-        }
-
-        /* ── What I Learned ── */
-        .learned {
-            background: var(--navy);
-            color: var(--white);
-            padding: 1.5rem 2rem;
-            border-radius: 6px;
-            margin-top: 1.5rem;
-        }
-        .learned .case-section-title {
-            color: var(--gold);
-            border-bottom-color: var(--gold);
-        }
-        .learned p {
-            color: rgba(255,255,255,0.9);
-            font-size: 0.95rem;
-            line-height: 1.8;
-        }
-
-        /* ── Page Closing ── */
-        .page-closing {
-            text-align: center;
-            padding: 4rem 2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s, transform 0.8s;
-        }
-        .page-closing.visible { opacity: 1; transform: translateY(0); }
-        .page-closing p {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--navy);
-            line-height: 1.6;
-            margin-bottom: 0.3rem;
-        }
-        .page-closing .pattern {
-            font-size: 1.1rem;
-            color: var(--medium);
-            font-style: italic;
-            margin-top: 0.5rem;
-        }
-
-        /* ── Explore CTAs ── */
-        .explore-ctas {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin-top: 2.5rem;
-            padding-bottom: 2rem;
-        }
-        .explore-ctas a {
-            font-size: 0.9rem;
-            color: var(--navy);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.6rem 1.5rem;
-            border: 1px solid var(--navy);
-            border-radius: 4px;
-            transition: 0.2s;
-        }
-        .explore-ctas a:hover {
-            background: var(--navy);
-            color: var(--white);
-        }
-
-        /* ── CTA Section ── */
-        .cta-section {
-            background: var(--navy);
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-        .cta-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-        .cta-section p {
-            color: rgba(255,255,255,0.7);
-            font-size: 1rem;
-            max-width: 500px;
-            margin: 0 auto 2rem;
-            line-height: 1.7;
-        }
-        .cta-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-        .cta-links a {
-            color: var(--gold);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            padding: 0.5rem 1.2rem;
-            border: 1px solid rgba(201,169,110,0.4);
-            border-radius: 4px;
-            transition: 0.2s;
-        }
-        .cta-links a:hover { background: rgba(201,169,110,0.15); }
-
-        /* ── Footer ── */
-        footer {
-            padding: 2.5rem 2rem;
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--medium);
-            border-top: 1px solid var(--light-border);
-        }
-
-        /* ── Mobile ── */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hamburger { display: flex; }
-            .nav-links.open {
-                display: flex; flex-direction: column;
-                position: absolute; top: 64px; left: 0; right: 0;
-                background: var(--white);
-                padding: 1.5rem 2rem;
-                border-bottom: 1px solid var(--light-border);
-                gap: 1rem;
-            }
-            .page-header { padding: 7rem 1.5rem 3rem; }
-            .page-header h1 { font-size: 2.2rem; }
-            .cases-container { padding: 0 1.5rem 3rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero { padding: 8rem 1.5rem 3rem; }
+            .section { padding: 3rem 1.5rem; }
             .case-title { font-size: 1.5rem; }
-            .case-card { margin-bottom: 3rem; padding-bottom: 3rem; }
-            .testimonial { padding: 1.2rem 1.5rem; }
-            .explore-ctas { flex-direction: column; align-items: center; }
+            .closing p { font-size: 1.15rem; }
         }
     </style>
 </head>
 <body>
 
-<!-- Navigation -->
+<!-- NAV -->
 <nav>
-    <a href="/" class="nav-logo">Melvin Garita</a>
-    <div class="nav-links" id="navLinks">
-        <a href="/cases" class="active">Cases</a>
-        <a href="/approach">Approach</a>
-        <a href="/thoughts">Thoughts</a>
-        <a href="/about">About</a>
-        <a href="#connect" class="nav-cta">Connect</a>
-    </div>
-    <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
-        <span></span><span></span><span></span>
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">Melvin Garita</a>
+        <ul class="nav-links">
+            <li><a href="/cases">Cases</a></li>
+            <li><a href="/approach">Approach</a></li>
+            <li><a href="/thoughts">Thoughts</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="#connect" class="nav-cta">Connect</a></li>
+        </ul>
+        <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+            <span></span><span></span><span></span>
+        </div>
     </div>
 </nav>
 
-<!-- Page Header -->
-<header class="page-header">
-    <h1>Cases</h1>
-    <p>Four leadership chapters. Different institutions, scales, and constraints. The same pattern.</p>
-</header>
+<!-- HERO -->
+<section class="hero">
+    <h1 class="fade-in">Cases</h1>
+    <p class="fade-in">Four leadership chapters. Different institutions, scales, and constraints. The same pattern.</p>
+</section>
 
-<!-- Cases Container -->
-<main class="cases-container">
-
-    <!-- ══════════════════════════════════════════ -->
-    <!-- CASE 1: BN VALORES (FLAGSHIP)             -->
-    <!-- ══════════════════════════════════════════ -->
-    <article class="case-card" id="bn-valores">
-        <span class="case-badge">Flagship Case</span>
-        <div class="case-meta">BN Valores · CEO · 2018–2023</div>
-        <h2 class="case-title">Building an Institutional Benchmark</h2>
-        <p class="case-subtitle">From a 71-person subsidiary without formal strategic planning to a nationally and internationally recognized model of institutional excellence.</p>
+<!-- CASE 1: BN VALORES — FLAGSHIP -->
+<section class="section section-divider">
+    <div class="case-card fade-in">
+        <div class="case-header">
+            <span class="flagship-badge">Flagship Case</span>
+            <div class="case-meta">BN Valores · CEO · 2018–2023</div>
+            <h2 class="case-title">Building an Institutional Benchmark</h2>
+            <p class="case-subtitle">From a 71-person subsidiary without formal strategic planning to a nationally and internationally recognized model of institutional excellence.</p>
+        </div>
 
         <div class="case-section">
-            <h3 class="case-section-title">The Institutional Challenge</h3>
+            <h3>The Institutional Challenge</h3>
             <p>When I was appointed CEO, BN Valores operated without a formal strategy execution system. Strategic decisions were concentrated in three people. Execution was disconnected from intent, and financial performance reflected it — an efficiency ratio above 1.0 meant the subsidiary was spending more than it earned.</p>
         </div>
 
         <div class="case-section">
-            <h3 class="case-section-title">The Hard Decisions</h3>
+            <h3>The Hard Decisions</h3>
             <p>I restructured the leadership team within the first 90 days — a move that generated significant internal resistance in a public-sector context. I redesigned incentives to link individual performance to strategic objectives, accepting that cultural pushback would precede results. I also committed to external benchmarks (McKinsey OHI and the International Best Practice Competition) as irreversible accountability mechanisms. Throughout, discipline had to be maintained amid regulatory pressure and market volatility.</p>
         </div>
 
         <div class="case-section">
-            <h3 class="case-section-title">What I Built</h3>
+            <h3>What I Built</h3>
             <p>A strategy execution system cascaded to every team. Seventy-one people with defined objectives, indicators, targets, and accountability. A Balanced Scorecard that connected board intent to front-line delivery.</p>
         </div>
 
         <div class="case-section">
-            <h3 class="case-section-title">The Results</h3>
+            <h3>The Results</h3>
             <table class="results-table">
                 <tr><td>ROAE</td><td>10.3% → 16.0% (+56%)</td></tr>
                 <tr><td>Efficiency Ratio</td><td>1.13 → 0.77</td></tr>
@@ -401,51 +159,53 @@
                 <tr><td>National Excellence Award</td><td>2020</td></tr>
                 <tr><td>International Best Practice Competition</td><td>2022</td></tr>
             </table>
-        </div>
 
-        <div class="testimonial">
-            <p>"In 2020, BN Valores was awarded the National Excellence Award after demonstrating outstanding and well-balanced performance across all critical dimensions of its management model: leadership and strategic planning, customers and markets, human talent, processes, and innovation and technology."</p>
-            <div class="attribution">Carlos Montenegro — Executive Director, Costa Rican Chamber of Industries</div>
-        </div>
+            <div class="testimonial" style="margin-top: 2rem;">
+                <div class="testimonial-label">National recognition</div>
+                <p>"In 2020, BN Valores was awarded the National Excellence Award after demonstrating outstanding and well-balanced performance across all critical dimensions of its management model: leadership and strategic planning, customers and markets, human talent, processes, and innovation and technology."</p>
+                <div class="attribution">Carlos Montenegro — Executive Director, Costa Rican Chamber of Industries</div>
+            </div>
 
-        <div class="testimonial">
-            <p>"I was very impressed by BN Valores' well-structured approach to linking strategy with day-to-day operations. It is a great best practice to learn from, particularly because it turns strategic priorities into clear actions and measures results across social, economic, and environmental outcomes."</p>
-            <div class="attribution">Dr. Robin Mann — Chairman, International Best Practice Competition</div>
-        </div>
-
-        <div class="learned">
-            <div class="case-section">
-                <h3 class="case-section-title">What I Learned</h3>
-                <p>Building an institution is harder than rescuing one. Sustained performance requires holding standards when urgency fades and the temptation to declare victory appears.</p>
+            <div class="testimonial">
+                <div class="testimonial-label">International recognition</div>
+                <p>"I was very impressed by BN Valores' well-structured approach to linking strategy with day-to-day operations. It is a great best practice to learn from, particularly because it turns strategic priorities into clear actions and measures results across social, economic, and environmental outcomes."</p>
+                <div class="attribution">Dr. Robin Mann — Chairman, International Best Practice Competition</div>
             </div>
         </div>
-    </article>
-
-    <!-- ══════════════════════════════════════════ -->
-    <!-- CASE 2: BN OPERATIONS                     -->
-    <!-- ══════════════════════════════════════════ -->
-    <article class="case-card" id="bn-operations">
-        <div class="case-meta">Banco Nacional de Costa Rica · Deputy General Manager, Operations · 2024–Present</div>
-        <h2 class="case-title">Institutional Discipline at Systemic Scale</h2>
-        <p class="case-subtitle">Overseeing 1,700+ professionals, a ~USD 160 million operating budget, and the execution infrastructure of one of the largest banks in Central America (~USD 17B in assets).</p>
 
         <div class="case-section">
-            <h3 class="case-section-title">The Institutional Challenge</h3>
-            <p>Banco Nacional's operations serve millions of customers across the country's largest financial institution. The issue was not failure, but the lack of systematic connection between strategic objectives and daily execution. Efficiency, fraud mitigation, revenue generation, and service quality operated as parallel priorities rather than integrated dimensions of one system.</p>
+            <h3>What I Learned</h3>
+            <p>Building an institution is harder than rescuing one. Sustained performance requires holding standards when urgency fades and the temptation to declare victory appears.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CASE 2: BN OPERATIONS -->
+<section class="section section-divider">
+    <div class="case-card fade-in">
+        <div class="case-header">
+            <div class="case-meta">Banco Nacional de Costa Rica · Deputy General Manager, Operations · 2024–Present</div>
+            <h2 class="case-title">Institutional Discipline at Systemic Scale</h2>
+            <p class="case-subtitle">Overseeing 1,700+ professionals, a ~USD 160 million operating budget, and the execution infrastructure of one of the largest banks in Central America (~USD 17B in assets).</p>
         </div>
 
         <div class="case-section">
-            <h3 class="case-section-title">The Hard Decisions</h3>
+            <h3>The Institutional Challenge</h3>
+            <p>Banco Nacional's operations serve millions of customers across one of Central America's largest financial institutions. The issue was not failure, but the lack of systematic connection between strategic objectives and daily execution. Efficiency, fraud mitigation, revenue generation, and service quality operated as parallel priorities rather than integrated dimensions of one system.</p>
+        </div>
+
+        <div class="case-section">
+            <h3>The Hard Decisions</h3>
             <p>I introduced a strategy execution architecture designed to connect institutional objectives with operational delivery at a significantly larger scale. The challenge was no longer alignment across 71 people, but across more than 1,700. This required confronting entrenched routines, renegotiating priorities across units, and making tradeoffs between short-term cost control and long-term capability building — decisions whose full consequences would unfold over years.</p>
         </div>
 
         <div class="case-section">
-            <h3 class="case-section-title">What I Built</h3>
+            <h3>What I Built</h3>
             <p>A unified strategy execution system linking institutional objectives to operational delivery. Strategic maps cascaded to every team. Performance indicators with clear owners and accountability.</p>
         </div>
 
         <div class="case-section">
-            <h3 class="case-section-title">The Results</h3>
+            <h3>The Results</h3>
             <table class="results-table">
                 <tr><td>Process cycle times</td><td>-52%</td></tr>
                 <tr><td>Fraud-related losses</td><td>-41%</td></tr>
@@ -456,39 +216,39 @@
             </table>
         </div>
 
-        <div class="learned">
-            <div class="case-section">
-                <h3 class="case-section-title">What I Learned</h3>
-                <p>At this scale, the system must carry the discipline that personal oversight cannot. The leader's role shifts from directing execution to ensuring the architecture holds under its own weight.</p>
-            </div>
+        <div class="case-section">
+            <h3>What I Learned</h3>
+            <p>At this scale, the system must carry the discipline that personal oversight cannot. The leader's role shifts from directing execution to ensuring the architecture holds under its own weight.</p>
         </div>
-    </article>
+    </div>
+</section>
 
-    <!-- ══════════════════════════════════════════ -->
-    <!-- CASE 3: TRADING DESKS                     -->
-    <!-- ══════════════════════════════════════════ -->
-    <article class="case-card" id="trading">
-        <div class="case-meta">Banco Nacional de Costa Rica · Head of Trading Desks · 2016–2018</div>
-        <h2 class="case-title">Capital Allocation and Market Judgment</h2>
-        <p class="case-subtitle">Leading approximately one-third of the bank's intermediation economics — ~USD 218 million annually — through sovereign volatility and structural market uncertainty.</p>
+<!-- CASE 3: TRADING -->
+<section class="section section-divider">
+    <div class="case-card fade-in">
+        <div class="case-header">
+            <div class="case-meta">Banco Nacional de Costa Rica · Head of Trading Desks · 2016–2018</div>
+            <h2 class="case-title">Capital Allocation and Market Judgment</h2>
+            <p class="case-subtitle">Leading approximately one-third of the bank's intermediation economics — ~USD 218 million annually — through sovereign volatility and structural market uncertainty.</p>
+        </div>
 
         <div class="case-section">
-            <h3 class="case-section-title">The Institutional Challenge</h3>
+            <h3>The Institutional Challenge</h3>
             <p>The role carried direct responsibility for a material portion of the bank's intermediation revenue. Every position involved balance sheet exposure, counterparty risk, and regulatory implications in a market with shallow liquidity and concentrated risks. This was capital allocation under persistent uncertainty — shaped by sovereign risk, currency volatility, shallow liquidity, and concentrated counterparties.</p>
         </div>
 
         <div class="case-section">
-            <h3 class="case-section-title">The Hard Decisions</h3>
+            <h3>The Hard Decisions</h3>
             <p>Judgment was exercised daily under incomplete information. Pricing models from developed markets required adaptation. I balanced return optimization against exposure limits, managed duration through rating transitions, and at times chose not to take positions that, while attractive, did not align with institutional risk parameters.</p>
         </div>
 
         <div class="case-section">
-            <h3 class="case-section-title">What I Built</h3>
+            <h3>What I Built</h3>
             <p>Risk frameworks connecting portfolio strategy to the bank's overall risk appetite. Pricing discipline oriented toward long-term capital stewardship rather than short-term P&L.</p>
         </div>
 
         <div class="case-section">
-            <h3 class="case-section-title">The Results</h3>
+            <h3>The Results</h3>
             <table class="results-table">
                 <tr><td>Annual intermediation economics</td><td>~USD 218M managed</td></tr>
                 <tr><td>Risk management</td><td>Consistent risk-adjusted returns within institutional parameters</td></tr>
@@ -496,94 +256,83 @@
             </table>
         </div>
 
-        <div class="learned">
-            <div class="case-section">
-                <h3 class="case-section-title">What I Learned</h3>
-                <p>Capital allocation is where financial analysis meets institutional judgment. The discipline to decline an exposure is often as important as the ability to identify one. This experience shaped how I approach resource allocation at enterprise level.</p>
-            </div>
+        <div class="case-section">
+            <h3>What I Learned</h3>
+            <p>Capital allocation is where financial analysis meets institutional judgment. The discipline to decline an exposure is often as important as the ability to identify one. This experience shaped how I approach resource allocation at enterprise level.</p>
         </div>
-    </article>
+    </div>
+</section>
 
-    <!-- ══════════════════════════════════════════ -->
-    <!-- CASE 4: LAFISE TURNAROUND                 -->
-    <!-- ══════════════════════════════════════════ -->
-    <article class="case-card" id="lafise">
-        <div class="case-meta">LAFISE Valores · 2005–2013</div>
-        <h2 class="case-title">From Last Place to Profitability in Twelve Months</h2>
-        <p class="case-subtitle">Turning around a brokerage firm from the lowest industry position to above-average profitability within a year.</p>
+<!-- CASE 4: LAFISE -->
+<section class="section section-divider">
+    <div class="case-card fade-in">
+        <div class="case-header">
+            <div class="case-meta">LAFISE Valores · 2005–2013</div>
+            <h2 class="case-title">From Last Place to Profitability in Twelve Months</h2>
+            <p class="case-subtitle">2005–2013 · LAFISE Valores · Analyst to Interim CEO</p>
+        </div>
 
         <div class="case-section">
-            <h3 class="case-section-title">The Institutional Challenge</h3>
+            <h3>The Institutional Challenge</h3>
             <p>Appointed to lead the turnaround of a brokerage ranked last in profitability. The firm had lost credibility, operational discipline had weakened, and direction was unclear. In a concentrated market, last place accelerates client and talent attrition.</p>
         </div>
 
         <div class="case-section">
-            <h3 class="case-section-title">The Hard Decisions</h3>
+            <h3>The Hard Decisions</h3>
             <p>With limited resources, I had to rebuild credibility, restructure costs, and restore discipline while retaining key expertise. Priorities constantly competed: short-term revenue versus structural fixes, growth versus profitability. I consistently chose the latter.</p>
         </div>
 
         <div class="case-section">
-            <h3 class="case-section-title">What I Built</h3>
+            <h3>What I Built</h3>
             <p>A simplified operating model focused on profitability and reliability. Clear accountability for financial outcomes at every level.</p>
         </div>
 
         <div class="case-section">
-            <h3 class="case-section-title">The Results</h3>
+            <h3>The Results</h3>
             <table class="results-table">
-                <tr><td>ROAE</td><td>-11.5% → 7.3% (+1.900 b.p.)</td></tr>
                 <tr><td>Starting position</td><td>Last place in industry profitability</td></tr>
-                <tr><td>Outcome</td><td>Above-average profitability within 12 months</td></tr>
+                <tr><td>ROE</td><td>-11.5% → 7.3% (+1,900 b.p.)</td></tr>
                 <tr><td>Trajectory</td><td>Analyst to interim CEO over progressive roles</td></tr>
             </table>
         </div>
 
-        <div class="learned">
-            <div class="case-section">
-                <h3 class="case-section-title">What I Learned</h3>
-                <p>Under constraint, discipline matters more than ambition — and credibility, once lost, compounds slowly when it begins to recover. That early lesson has shaped every subsequent leadership decision.</p>
-            </div>
+        <div class="case-section">
+            <h3>What I Learned</h3>
+            <p>Under constraint, discipline matters more than ambition — and credibility, once lost, compounds slowly when it begins to recover. That early lesson has shaped every subsequent leadership decision.</p>
         </div>
-    </article>
+    </div>
+</section>
 
-</main>
-
-<!-- Page Closing -->
-<div class="page-closing">
-    <p>Different institutions. Different scales. Different constraints.</p>
-    <p class="pattern">The same underlying pattern.</p>
-    <div class="explore-ctas">
+<!-- CLOSING -->
+<section class="closing">
+    <p class="fade-in">Different institutions. Different scales. Different constraints.<br>The same underlying pattern.</p>
+    <div class="closing-ctas fade-in">
         <a href="/approach">Explore the Approach →</a>
         <a href="/thoughts">Read My Thoughts →</a>
         <a href="/about">Full Bio →</a>
     </div>
-</div>
+</section>
 
-<!-- CTA Section -->
+<!-- CTA -->
 <section class="cta-section" id="connect">
     <h2>Connect</h2>
     <p>Writing, teaching, and thinking about how financial institutions create lasting value.</p>
     <div class="cta-links">
-        <a href="https://linkedin.com/in/melvingarita" target="_blank">LinkedIn</a>
+        <a href="https://linkedin.com/in/melvingarita" target="_blank">LinkedIn ↗</a>
         <a href="mailto:melvin@melvingarita.com">melvin@melvingarita.com</a>
     </div>
 </section>
 
-<!-- Footer -->
+<!-- FOOTER -->
 <footer>
-    <p>&copy; 2026 Melvin Garita Mora &middot; San José, Costa Rica</p>
+    <p>© 2026 Melvin Garita Mora · San José, Costa Rica</p>
 </footer>
 
-<!-- Scroll Animations -->
 <script>
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.case-card, .page-closing').forEach(el => observer.observe(el));
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 
 </body>
